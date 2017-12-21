@@ -18,7 +18,9 @@ var commentRoutes= require("./routes/comments"),
 
 
 // var User = require("./models/user");
-mongoose.connect("mongodb://localhost/yelp_camp_v3");
+//mongoose.connect("mongodb://localhost/yelp_camp_v3");
+mongoose.connect("mongodb://Adam:Karate@ds011382.mlab.com:11382/yelpcamp");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
