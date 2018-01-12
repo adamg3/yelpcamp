@@ -1,3 +1,4 @@
+//package requirements
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
@@ -39,11 +40,13 @@ app.use(require("express-session")({
     saveUninitialized: false
 }));
 
+//User authentication
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
